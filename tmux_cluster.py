@@ -9,11 +9,13 @@ import sys
 system = {"system1": ["host1", "host2"],
           "system2": ["host3", "host4", "host5"]}
 
-def connect(hosts):
-    """Connect to list of hosts
+def connect(hosts, user=None, port=None):
+    """Connect to list of hosts using ssh
 
     Args:
-        hosts: a list of hosts
+        hosts: a list of hosts to connect to
+        user:  username to connect with
+        port:  port to connect with
     Returns:
         True or False depending on success
     """
@@ -23,8 +25,8 @@ def new_window(hosts, session):
     """Make a new window in session
 
     Args:
-        hosts   : a list of hosts
-        session : tmux-session to make a new window in
+        hosts:   a list of hosts 
+        session: tmux-session to make a new window in
     Returns:
         True or False depending on success
     """
@@ -48,7 +50,8 @@ def main():
     # Newline is horrible
     parser.add_argument("-s", "--system", help="Connect to system defined in config")
     parser.add_argument("-t", "--tmux-session", help="Add new window to session instead of making a new session")
-    parser.add_argument("-u", "--user", help="User used with ssh. Defaults to self", default=getpass.getuser())
+    parser.add_argument("-u", "--user", help="Username used with ssh. Defaults to self", default=getpass.getuser())
+    parser.add_argument("-p", "--port", help="Port used with ssh. Defaults to 22", default="22")
 
     args = parser.parse_args()
 
