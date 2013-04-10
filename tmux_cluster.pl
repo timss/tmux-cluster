@@ -1,8 +1,9 @@
 #!/usr/bin/perl
 
-#---TMUX-CLUSTER---#
-#    Version: v1   #
-#------------------#
+#----------TMUX-CLUSTER----------#
+# Legacy version                 #
+# for reference and simple usage #
+#--------------------------------#
 
 use strict;
 
