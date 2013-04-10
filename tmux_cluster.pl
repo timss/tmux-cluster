@@ -13,8 +13,8 @@ if($#ARGV < 0) {
 }
 
 my $session = lc($ARGV[0]);
-my $applications = {foo = ["a", "b", "c"],
-                    bar = ["d", "e", "f"]};
+my $applications = {foo => ["a", "b", "c"],
+                    bar => ["d", "e", "f"]};
 
 system("tmux new-window -n $session");
 
