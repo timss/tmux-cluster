@@ -41,7 +41,25 @@ def systems_hosts(system):
     """
     raise NotImplementedError
 
+# What a horrible function name. Go on. Come up with something better.
+def python_info_ok():
+    """Check if python version 2 and dependencies fulfilled."""
+    if not (2,) <= sys.version_info[:2] < (3,):
+        print "Requires Python 2."
+        return False
+
+    try:
+        __import__(argparse)
+    except ImportError:
+        print "Tmux cluster requires argparse.\n\
+               Argparse became standard as of Python 2.7"
+        return False
+
+    return True
+
 def main():
+    if not python_info_ok(): sys.exit(1)
+
     parser = argparse.ArgumentParser(
             usage="Usage: %s system" % os.path.basename(sys.argv[0]), 
             description="Tmux cluster similar to clusterssh.", 
