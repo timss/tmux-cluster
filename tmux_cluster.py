@@ -45,14 +45,13 @@ def systems_hosts(system):
         system (str): name of system used as key in system dict.
 
     Returns:
-        a list of hosts.
+        A list of hosts.
 
     """
     raise NotImplementedError
 
 
-# What a horrible function name. Go on. Come up with something better.
-def python_info_ok():
+def python_req():
     """Check if python version 2 and dependencies fulfilled.
 
     Returns:
@@ -74,7 +73,7 @@ def python_info_ok():
 
 
 def main():
-    if not python_info_ok(): sys.exit(1)
+    if not python_req(): sys.exit(1)
 
     parser = argparse.ArgumentParser(
             usage="Usage: %s system" % os.path.basename(sys.argv[0]), 
