@@ -59,7 +59,7 @@ def python_info_ok():
         True or False.
 
     """
-    if not (2,) <= sys.version_info[:2] < (3,):
+    if sys.version_info[:1] != (2,):
         print "Requires Python 2."
         return False
 
