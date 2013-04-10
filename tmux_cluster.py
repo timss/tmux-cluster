@@ -10,40 +10,51 @@ system = {"system1": ["host1", "host2"],
           "system2": ["host3", "host4", "host5"]}
 
 def connect(hosts, user=None, port=None):
-    """Connect to list of hosts using ssh
+    """Connect to list of hosts using ssh.
 
     Args:
-        hosts: a list of hosts to connect to
-        user:  username to connect with
-        port:  port to connect with
+        hosts (list): hosts to connect to.
+        user (str): username to connect with.
+        port (str): port to connect to.
+
     Returns:
-        True or False depending on success
+        True or False.
+
     """
     raise NotImplementedError
 
-def new_window(hosts, session):
-    """Make a new window in session
+def new_window(session):
+    """Make a new window in session.
 
     Args:
-        hosts:   a list of hosts 
-        session: tmux-session to make a new window in
+        session (str): tmux-session to make a new window in.
+
     Returns:
-        True or False depending on success
+        Window id or False.
+
     """
     raise NotImplementedError
 
 def systems_hosts(system):
-    """Get list of hosts in system
+    """Get list of hosts in system.
+
     Args:
-        system: name of system used as key in system dict
+        system (str): name of system used as key in system dict.
+
     Returns:
-        a list of hosts
+        a list of hosts.
+
     """
     raise NotImplementedError
 
 # What a horrible function name. Go on. Come up with something better.
 def python_info_ok():
-    """Check if python version 2 and dependencies fulfilled."""
+    """Check if python version 2 and dependencies fulfilled.
+
+    Returns:
+        True or False.
+
+    """
     if not (2,) <= sys.version_info[:2] < (3,):
         print "Requires Python 2."
         return False
