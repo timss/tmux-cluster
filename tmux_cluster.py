@@ -9,6 +9,7 @@ import sys
 system = {"system1": ["host1", "host2"],
           "system2": ["host3", "host4", "host5"]}
 
+
 def connect(hosts, user=None, port=None):
     """Connect to list of hosts using ssh.
 
@@ -23,6 +24,7 @@ def connect(hosts, user=None, port=None):
     """
     raise NotImplementedError
 
+
 def new_window(session):
     """Make a new window in session.
 
@@ -35,6 +37,7 @@ def new_window(session):
     """
     raise NotImplementedError
 
+
 def systems_hosts(system):
     """Get list of hosts in system.
 
@@ -46,6 +49,7 @@ def systems_hosts(system):
 
     """
     raise NotImplementedError
+
 
 # What a horrible function name. Go on. Come up with something better.
 def python_info_ok():
@@ -68,6 +72,7 @@ def python_info_ok():
 
     return True
 
+
 def main():
     if not python_info_ok(): sys.exit(1)
 
@@ -85,6 +90,7 @@ def main():
     args = parser.parse_args()
 
     # Check and act according to args
+
 
 if __name__ == "__main__":
     main()
