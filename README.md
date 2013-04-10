@@ -1,4 +1,4 @@
-tmux_cluster
+Tmux cluster
 ============
 
-Tmux cluster written in perl equivalent to (xming) clusterssh
+Tmux cluster equivalent to (xming) clusterssh written in Python.
